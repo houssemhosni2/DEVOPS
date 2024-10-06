@@ -26,3 +26,4 @@ public class Product implements Serializable {
     @JsonIgnore
     Stock stock;
 }
+//koussaytest
