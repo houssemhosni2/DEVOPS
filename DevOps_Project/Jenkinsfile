@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+            stage('Checkout') {
+            steps {
+              git branch: 'koussay1',
+              url: "https://github.com/zankech/project.git"
+            }
+        }
+
+    stage('Build') {
+        steps {
+            dir('DevOps_Project') {
+                sh 'mvn clean package'
+            }
+        }
+    }
+
+        }
+}
