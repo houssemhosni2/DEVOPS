@@ -27,3 +27,4 @@ public class Product implements Serializable {
     Stock stock;
 }
 //koussaytest
+//kouuu
