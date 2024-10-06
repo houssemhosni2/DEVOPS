@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = "/opt/apache-maven"
+        M2_HOME = "/opt/apache-maven"
         JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
         // Ensure the PATH is set correctly without duplication
-        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
+        PATH = "${M2_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir('DevOps_Project') {
-
+                    sh 'mvn clean package'
                 }
             }
         }
