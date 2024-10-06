@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        // Set Maven and Java Home paths
         MAVEN_HOME = "/opt/apache-maven"
         JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-        PATH = "${env.PATH}:${MAVEN_HOME}/bin:${JAVA_HOME}/bin"
+        // Ensure the PATH is set correctly without duplication
+        PATH = "${MAVEN_HOME}/bin:${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
